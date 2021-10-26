@@ -1,19 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  rails: MyString
-  g: MyString
-  resource: MyString
-  User: MyString
   username: MyString
   balance: 1.5
   remainder: 1.5
 
 two:
-  rails: MyString
-  g: MyString
-  resource: MyString
-  User: MyString
   username: MyString
   balance: 1.5
   remainder: 1.5
