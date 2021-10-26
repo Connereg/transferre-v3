@@ -1,0 +1,2 @@
+class TransferrableTransactionsController < ApplicationController
+end
