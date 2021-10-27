@@ -4,8 +4,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :username
       t.float :balance
       t.float :remainder
-      t.references :transactor, foreign_key: { to_table: :users }
-      t.references :transactee, foreign_key: { to_table: :users }
+
 
       t.timestamps
     end
