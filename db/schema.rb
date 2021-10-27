@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_144107) do
+ActiveRecord::Schema.define(version: 2021_10_26_213319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,14 +21,16 @@ ActiveRecord::Schema.define(version: 2021_10_26_144107) do
     t.float "cost"
     t.string "category"
     t.string "message"
+    t.boolean "confirmed"
+    t.boolean "transaction_to_user"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "user_expenses", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.float "cost"
     t.string "category"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_user_expenses_on_user_id"
@@ -38,15 +40,9 @@ ActiveRecord::Schema.define(version: 2021_10_26_144107) do
     t.string "username"
     t.float "balance"
     t.float "remainder"
-    t.bigint "transactor_id"
-    t.bigint "transactee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["transactee_id"], name: "index_users_on_transactee_id"
-    t.index ["transactor_id"], name: "index_users_on_transactor_id"
   end
 
   add_foreign_key "user_expenses", "users"
-  add_foreign_key "users", "users", column: "transactee_id"
-  add_foreign_key "users", "users", column: "transactor_id"
 end

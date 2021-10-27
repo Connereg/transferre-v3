@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  user: one
   cost: 1.5
   category: MyString
-  user: one
 
 two:
+  user: two
   cost: 1.5
   category: MyString
-  user: two

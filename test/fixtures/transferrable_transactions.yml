@@ -1,13 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  transactor_id: 1
+  transactee_id: 1
   cost: 1.5
   category: MyString
-  transactor: one
-  transactee: one
+  message: MyString
+  confirmed: false
+  transaction_to_user: false
 
 two:
+  transactor_id: 1
+  transactee_id: 1
   cost: 1.5
   category: MyString
-  transactor: two
-  transactee: two
+  message: MyString
+  confirmed: false
+  transaction_to_user: false
