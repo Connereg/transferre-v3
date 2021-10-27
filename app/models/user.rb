@@ -10,5 +10,8 @@ class User < ApplicationRecord
    has_many :transactee_transactions, foreign_key: "transactee_id", class_name: "Transferrable_Transaction"
    has_many :transactees, through: :transactee_transactions, source: :transactee
 
-   
+   def initialize(attributes=nil)
+      attr_with_defaults = {:balance => 0, :remainder => 0}.merge(attributes)
+      super(attr_with_defaults)
+   end
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :user_expenses
-  resources :transferrable_transactions
-  resources :users, only: [:update, :destroy]
+  resources :user_expenses, only: [:create, :update, :destroy]
+  resources :transferrable_transactions, only: [:create, :update]
+  resources :users, only: [:index, :update, :destroy]
 
   #check out for frontend fetches https://learning.flatironschool.com/courses/4231/pages/authenticating-users?module_item_id=311665
 
