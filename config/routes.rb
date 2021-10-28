@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :user_expenses, only: [:create, :update, :destroy]
+  resources :user_expenses, only: [:index, :create, :update, :destroy]
   resources :transferrable_transactions, only: [:create, :update]
   resources :users, only: [:index, :update, :destroy]
 

@@ -39,7 +39,7 @@ module TransferreV3
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
 
-    #config.action_dispatch.cookies_same_site_protection = :strict
+    config.action_dispatch.cookies_same_site_protection = :strict
     #since we are using different front and back end domains the above might inhibit use of cookies
   end
 end
