@@ -9,7 +9,7 @@ class TransferrableTransactionsController < ApplicationController
     def create 
         byebug
         user_transaction = @current_user.transferrable_transactions.create!(
-            transactor_id: @current_user.id,
+            
             transactee_id: User.find_by(username: params[:tranactee]).id, 
             cost: params[:cost],
             category: params[:category],

@@ -8,7 +8,6 @@ class UserExpensesController < ApplicationController
     end
 
     def create 
-        byebug
         user_expense = @current_user.user_expenses.create!(expense_params)
         render json: user_expense, status: :created
     end
