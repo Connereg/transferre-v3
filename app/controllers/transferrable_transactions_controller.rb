@@ -7,7 +7,14 @@ class TransferrableTransactionsController < ApplicationController
     end
 
     def create 
-        user_transaction = @current_user.transferrable_transactions.create!(transaction_params)
+        byebug
+        user_transaction = @current_user.transferrable_transactions.create!(
+            transactor_id: @current_user.id,
+            transactee_id: User.find_by(username: params[:tranactee]).id, 
+            cost: params[:cost],
+            category: params[:category],
+            transaction_to_user: params[:transaction_to_user]
+        )
         render json: user_expense, status: :created
     end
 
@@ -18,11 +25,6 @@ class TransferrableTransactionsController < ApplicationController
     end
     
     private
-
-    def transaction_params
-        params.permit(:transactor_id, :transactee_id, :cost, :category, :message, :transaction_to_user)
-    end
-    
 
     def render_not_found_response
         render json: {error: "Transaction not found"}, status: :not_found  

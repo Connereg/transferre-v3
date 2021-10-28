@@ -8,6 +8,7 @@ class UserExpensesController < ApplicationController
     end
 
     def create 
+        byebug
         user_expense = @current_user.user_expenses.create!(expense_params)
         render json: user_expense, status: :created
     end
@@ -26,7 +27,7 @@ class UserExpensesController < ApplicationController
     private 
 
     def expense_params
-        params.permit(:user_id, :cost, :category)
+        params.permit(:cost, :category)
     end
     
     def render_not_found_response
