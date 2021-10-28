@@ -19,7 +19,8 @@ class UserExpensesController < ApplicationController
     end
 
     def destroy
-        UserExpense.find_by(id: params[:id])
+        user_expense = UserExpense.find_by(id: params[:id])
+        user_expense.destroy
         head :no_content
     end
 
