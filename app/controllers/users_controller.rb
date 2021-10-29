@@ -18,12 +18,12 @@ class UsersController < ApplicationController
 
     def update_balance
         @current_user.update!(balance: params[:balance])
-        render json: @current_user, status: :ok
+        render json: @current_user, serializer: UserBalanceSerializer, status: :ok
     end
 
     def update_remainder
         @current_user.update!(remainder: params[:remainder])
-        render json: @current_user, status: :ok
+        render json: @current_user, serializer: UserRemainderSerializer, status: :ok
     end
 
 
