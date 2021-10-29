@@ -4,7 +4,7 @@ class UserExpensesController < ApplicationController
 
     def index   
         user_expenses = @current_user.user_expenses
-        render json: user_expenses
+        render json: user_expenses, methods: [:balance], status: :ok
     end
 
     def create 

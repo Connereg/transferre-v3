@@ -24,6 +24,6 @@ end
 
 puts "🌱 Seeding Expenses..."
 
-200.times do
+10.times do
     UserExpense.create(user_id: 5, cost: Faker::Number.decimal(l_digits: 2), category: categories.sample)
 end
