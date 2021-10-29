@@ -3,7 +3,7 @@ class TransferrableTransaction < ApplicationRecord
   belongs_to :transactee, foreign_key: "transactee_id", class_name: "User"
 
   def initialize(attributes=nil)
-    attr_with_defaults = {:confirmed => null}.merge(attributes)
+    attr_with_defaults = {:confirmed => nil}.merge(attributes)
     super(attr_with_defaults)
   end
 end

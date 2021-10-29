@@ -3,7 +3,7 @@ class UserSerializer < ActiveModel::Serializer
 
   def balance
     expenses = self.object.user_expenses.map{|expense| expense.cost}.sum
-    self.object.balance - expenses
+    (self.object.balance - expenses).truncate(2)
   end
 
 end
