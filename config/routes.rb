@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   #to log the user out 
   delete "/logout", to: "sessions#destroy"
 
+  #for balance update
+  put "/balance", to: "users#update_balance"
+
+  #for remainder update
+  put "/remainder", to: "users#update_remainder"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
