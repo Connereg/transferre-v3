@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#puts "🌱 Seeding Users..."
-#50.times do
-   # User.create(username: Faker::Name.name, password: "test")
-#end
+puts "🌱 Seeding Users..."
+50.times do
+   User.create(username: Faker::Name.name, password: "test")
+end
 
 puts "🌱 Seeding Transactions..."
 categories = ["utilities", "groceries", "medicine", "dinner", "movie", "disaster"]

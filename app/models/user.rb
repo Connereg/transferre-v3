@@ -15,7 +15,7 @@ class User < ApplicationRecord
       attr_with_defaults = {:balance => 0, :remainder => 0}.merge(attributes)
       super(attr_with_defaults)
    end
-  
-  
 
+   validates :balance, presence:true, numericality:{only_float: true}
+   validates :remainder, presence:true, numericality:{only_float: true}
 end
