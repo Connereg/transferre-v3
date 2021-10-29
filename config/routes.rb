@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   #check out for frontend fetches https://learning.flatironschool.com/courses/4231/pages/authenticating-users?module_item_id=311665
 
-  #for login currently just username no password
+  #for login 
   post "/login", to: "sessions#create"
   #create new user
   post "/signup", to: "users#create"
@@ -18,7 +18,6 @@ Rails.application.routes.draw do
 
   #for remainder update
   put "/remainder", to: "users#update_remainder"
-
   
   resources :transactors
   resources :transactees
